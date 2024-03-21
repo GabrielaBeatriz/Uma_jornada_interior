@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
 public class check : MonoBehaviour
 {
     private player Player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class check : MonoBehaviour
     {
         
     }
+    
 
     private void OnCollisionEnter2D(Collision2D coll)
     {

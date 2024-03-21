@@ -10,6 +10,8 @@ public class player : MonoBehaviour
     public bool isJumping;
 
     private Rigidbody2D rig;
+
+    private int nPulos = 2;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,20 @@ public class player : MonoBehaviour
     {
         Move();
         Jump();
+        CheckInput();
+    }
+
+    void CheckInput()
+    {
+        if (gameObject.layer == 8)
+        {
+            nPulos = 2; 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && nPulos > 0)
+        {
+            Jump();
+        }
     }
 
     void Move()
@@ -44,6 +60,7 @@ public class player : MonoBehaviour
 
     void Jump()
     {
+        
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
