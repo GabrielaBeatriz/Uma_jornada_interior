@@ -27,6 +27,7 @@ public class check : MonoBehaviour
         if (coll.gameObject.layer == 8)
         {
             Player.isJumping = false;
+            Player.nPulos = 2;
         }
     }
 

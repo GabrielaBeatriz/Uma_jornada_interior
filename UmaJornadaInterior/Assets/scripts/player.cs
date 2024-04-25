@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
@@ -11,7 +12,7 @@ public class player : MonoBehaviour
 
     private Rigidbody2D rig;
 
-    private int nPulos = 2;
+    public int nPulos;
     
     // Start is called before the first frame update
     void Start()
@@ -24,21 +25,9 @@ public class player : MonoBehaviour
     {
         Move();
         Jump();
-        CheckInput();
     }
 
-    void CheckInput()
-    {
-        if (gameObject.layer == 8)
-        {
-            nPulos = 2; 
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && nPulos > 0)
-        {
-            Jump();
-        }
-    }
+    
 
     void Move()
     {
@@ -60,10 +49,13 @@ public class player : MonoBehaviour
 
     void Jump()
     {
-        
-        if (Input.GetButtonDown("Jump") && !isJumping)
+        if (Input.GetButtonDown("Jump") )
         {
-            rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            if(nPulos > 0)
+            {
+                nPulos--;
+                rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse); 
+            }
         }
     }
 }
