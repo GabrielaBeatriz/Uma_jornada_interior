@@ -1612,6 +1612,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: plataforma verde
       objectReference: {fileID: 0}
+    - target: {fileID: 3011371858561543966, guid: be089754fe4fe7946a0a2dd67633c0a7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3011371858561543966, guid: be089754fe4fe7946a0a2dd67633c0a7, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364177052169213173, guid: be089754fe4fe7946a0a2dd67633c0a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8890061454350385602, guid: be089754fe4fe7946a0a2dd67633c0a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.6
