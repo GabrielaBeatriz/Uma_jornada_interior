@@ -36,6 +36,7 @@ public class check : MonoBehaviour
         if (coll.gameObject.layer == 8)
         {
             Player.isJumping = true;
+            //Player.anim.Play("pulo");
         }
     }
 }

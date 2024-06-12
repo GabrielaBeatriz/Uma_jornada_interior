@@ -10,6 +10,8 @@ public class player : MonoBehaviour
 
     public bool isJumping;
 
+    public Animator anim;
+
     private Rigidbody2D rig;
 
     public int nPulos;
@@ -18,10 +20,11 @@ public class player : MonoBehaviour
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
         Jump();
@@ -38,23 +41,32 @@ public class player : MonoBehaviour
 
         if (inputAxis > 0)
         {
+            anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector2(0f, 0f);
         }
         
         if (inputAxis < 0)
         {
+            anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector2(0f, 180f);
+        }
+
+        if (inputAxis == 0 && !isJumping)
+        {
+            anim.SetInteger("transition", 0);
         }
     }
 
     void Jump()
     {
+        
         if (Input.GetButtonDown("Jump") )
         {
+            anim.SetInteger("transition", 2);
             if(nPulos > 0)
             {
                 nPulos--;
-                rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse); 
+                rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
         }
     }
