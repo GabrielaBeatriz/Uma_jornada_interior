@@ -49,7 +49,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector2(0f, 0f);
         }
         
-        if (inputAxis < 0)
+        else if (inputAxis < 0)
         {
             if (!isJumping)
             {
@@ -58,7 +58,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector2(0f, 180f);
         }
 
-        if (inputAxis == 0 && !isJumping )
+        else if (inputAxis == 0 && !isJumping)
         {
             anim.SetInteger("transition", 0);
         }
@@ -67,14 +67,17 @@ public class player : MonoBehaviour
     void Jump()
     {
         
-        if (Input.GetButtonDown("Jump") )
+        if (Input.GetButtonDown("Jump"))
         {
-            anim.SetInteger("transition", 2);
+            
             if(nPulos > 0)
             {
                 nPulos--;
+                anim.SetInteger("transition", 2);
+                isJumping = true;
                 rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
         }
     }
+
 }

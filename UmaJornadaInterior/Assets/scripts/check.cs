@@ -30,7 +30,7 @@ public class check : MonoBehaviour
             Player.nPulos = 2;
         }
     }
-
+/*
     private void OnCollisionExit2D(Collision2D coll)
     {
         if (coll.gameObject.layer == 8)
@@ -38,5 +38,5 @@ public class check : MonoBehaviour
             Player.isJumping = true;
             //Player.anim.Play("pulo");
         }
-    }
+    }*/
 }
