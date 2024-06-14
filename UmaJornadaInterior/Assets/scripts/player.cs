@@ -41,17 +41,24 @@ public class player : MonoBehaviour
 
         if (inputAxis > 0)
         {
-            anim.SetInteger("transition", 1);
+            if (!isJumping)
+            {
+                anim.SetInteger("transition", 1);
+            }
+
             transform.eulerAngles = new Vector2(0f, 0f);
         }
         
         if (inputAxis < 0)
         {
-            anim.SetInteger("transition", 1);
+            if (!isJumping)
+            {
+                anim.SetInteger("transition", 1);
+            }
             transform.eulerAngles = new Vector2(0f, 180f);
         }
 
-        if (inputAxis == 0 && !isJumping)
+        if (inputAxis == 0 && !isJumping )
         {
             anim.SetInteger("transition", 0);
         }
