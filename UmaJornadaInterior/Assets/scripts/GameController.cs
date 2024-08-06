@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public Text healthText;
+    
     public int score;
     public int score2;
     public int score3;
@@ -42,5 +44,10 @@ public class GameController : MonoBehaviour
         score3 += value;
         scoreText3.text = score3.ToString();
         
+    }
+
+    public void UpdateLives(int value)
+    {
+        healthText.text = "x" + value.ToString();
     }
 }
