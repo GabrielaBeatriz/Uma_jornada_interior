@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public int health;
     public float Speed;
     public float jumpForce;
 
@@ -77,6 +78,18 @@ public class player : MonoBehaviour
                 isJumping = true;
                 rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
+        }
+    }
+
+    public void Damage (int dmg)
+    {
+        health -= dmg;
+
+        if (health <=0)
+        {
+            //chamar game over
+            
+            
         }
     }
 
