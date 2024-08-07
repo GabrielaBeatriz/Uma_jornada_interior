@@ -1,10 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public GameObject fogoProjetil; // fogo
+    public Transform arma; // posiçao de onde sai o tiro
+    private bool tiro;
+    public float forcaDoTiro; //velocidade do tiro
+    private bool flipX = false; 
+    
     public int health = 3;
     public float Speed;
     public float jumpForce;
@@ -25,6 +33,14 @@ public class player : MonoBehaviour
         
         GameController.instance.UpdateLives(health);
     }
+
+    private void Update()
+    {
+        tiro = Input.GetKeyDown(KeyCode.Z);
+
+        Atirar();
+    }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -92,6 +108,17 @@ public class player : MonoBehaviour
             //chamar game over
             
             
+        }
+    }
+
+    private void Atirar()
+    {
+        if (tiro == true)
+        {
+            GameObject temp = Instantiate(fogoProjetil);
+            temp.transform.position = arma.position;
+            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(forcaDoTiro, 0);
+            Destroy(temp.gameObject, 3f);
         }
     }
 
