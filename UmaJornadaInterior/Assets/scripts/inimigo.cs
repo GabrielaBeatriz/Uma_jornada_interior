@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class inimigo : MonoBehaviour
@@ -8,6 +10,9 @@ public class inimigo : MonoBehaviour
     public float walkTime;
     public bool walkRight = true;
     private float timer;
+
+    public int damage = 1;
+    
     
 
     private Rigidbody2D rig;
@@ -17,8 +22,13 @@ public class inimigo : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
     }
 
+    void Update()
+    {
+        flipInimigo();
+    }
+
     // Update is called once per frame
-    void FixedUpdate()
+    private void flipInimigo()
     {
         timer += Time.deltaTime;
 
@@ -41,4 +51,28 @@ public class inimigo : MonoBehaviour
         }
        
     }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col != null && !col.collider.CompareTag("Player") && !col.collider.CompareTag("chão") )
+        {
+            walkRight = !walkRight;
+        }
+        
+        
+        if (col.gameObject.tag == "Player")
+        {
+            col.gameObject.GetComponent<player>().Damage(damage);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.CompareTag("fogo"))
+        {
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
+    
 }

@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     private bool flipX = false; 
     
     public int health = 3;
+    
     public float Speed;
     public float jumpForce;
 
@@ -103,10 +104,20 @@ public class player : MonoBehaviour
     {
         health -= dmg;
 
+        if (transform.rotation.y == 0)
+        {
+            transform.position += new Vector3(-1, 0, 0);
+        }
+
+        if (transform.rotation.y == 180)
+        {
+            transform.position += new Vector3(1, 0, 0);
+
+        }
+        
         if (health <=0)
         {
             //chamar game over
-            
             
         }
     }
@@ -121,5 +132,5 @@ public class player : MonoBehaviour
             Destroy(temp.gameObject, 3f);
         }
     }
-
+    
 }
