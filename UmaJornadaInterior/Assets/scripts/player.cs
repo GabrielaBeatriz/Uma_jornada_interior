@@ -14,6 +14,8 @@ public class player : MonoBehaviour
     private bool flipX = false; 
     
     public int health = 3;
+    public float paralysisDuration = 2f; // Duração da paralisação em segundos
+    public bool isParalyzed = false;
     
     public float Speed;
     public float jumpForce;
@@ -37,6 +39,10 @@ public class player : MonoBehaviour
 
     private void Update()
     {
+        if (isParalyzed)
+        {
+            return;
+        }
         tiro = Input.GetKeyDown(KeyCode.Z);
 
         Atirar();
@@ -46,6 +52,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (isParalyzed)
+        {
+            return;
+        }
+        
         Move();
         Jump();
     }
@@ -103,6 +114,7 @@ public class player : MonoBehaviour
     public void Damage (int dmg)
     {
         health -= dmg;
+        GameController.instance.UpdateLives(health);
 
         if (transform.rotation.y == 0)
         {
@@ -133,4 +145,21 @@ public class player : MonoBehaviour
         }
     }
     
+    public void ApplyParalysis()
+    {
+        if (!isParalyzed)
+        {
+            StartCoroutine(ParalysisCoroutine());
+        }
+    }
+
+    private IEnumerator ParalysisCoroutine()
+    {
+        isParalyzed = true;
+        anim.SetInteger("transition", 0);
+        yield return new WaitForSeconds(paralysisDuration);
+        isParalyzed = false;
+        StopCoroutine(ParalysisCoroutine());
+    }
 }
+
