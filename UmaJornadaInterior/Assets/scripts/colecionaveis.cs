@@ -13,6 +13,7 @@ public class colecionaveis : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            AudioObserver.OnPlaySfxEvent("coletavel");
             GameController.instance.UpdateScore(scoreValue);
             GameController.instance.UpdateScore2(scoreValue2);
             GameController.instance.UpdateScore3(scoreValue3);

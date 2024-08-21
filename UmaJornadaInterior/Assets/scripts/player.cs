@@ -107,6 +107,7 @@ public class player : MonoBehaviour
                 anim.SetInteger("transition", 2);
                 isJumping = true;
                 rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                AudioObserver.OnPlaySfxEvent("pulo");
             }
         }
     }
