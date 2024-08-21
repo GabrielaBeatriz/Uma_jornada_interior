@@ -51,6 +51,15 @@ public class AudioManager : MonoBehaviour
             case "coletavel":
                 sfxSource.PlayOneShot(clipColetavel);
                 break;
+            case "coletavel1":
+                sfxSource.PlayOneShot(clipColetavel);
+                break;
+            case "coletavel2":
+                sfxSource.PlayOneShot(clipColetavel);
+                break;
+            case "coletavel3":
+                sfxSource.PlayOneShot(clipColetavel);
+                break;
             default:
                 Debug.LogError($"efeito sonoro {NomeDoClip} não encontrado");
                 break;
