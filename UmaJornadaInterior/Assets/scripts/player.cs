@@ -130,7 +130,8 @@ public class player : MonoBehaviour
         
         if (health <=0)
         {
-            //chamar game over
+            //chamar game 
+            GameController.instance.GameOver();
             
         }
     }
