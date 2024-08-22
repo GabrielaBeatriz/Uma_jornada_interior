@@ -132,7 +132,6 @@ public class player : MonoBehaviour
         {
             //chamar game 
             GameController.instance.GameOver();
-            
         }
     }
 
@@ -162,6 +161,15 @@ public class player : MonoBehaviour
         yield return new WaitForSeconds(paralysisDuration);
         isParalyzed = false;
         StopCoroutine(ParalysisCoroutine());
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == 9)
+        {
+            GameController.instance.GameOver();
+
+        }
     }
 }
 
