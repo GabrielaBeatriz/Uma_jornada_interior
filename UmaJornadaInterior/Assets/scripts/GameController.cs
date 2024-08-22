@@ -77,11 +77,13 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
+        AudioObserver.OnStopMusicEvent();
         gameOverObj.SetActive(true);
     }
 
     public void RestartGame()
     {
+        AudioObserver.OnPlayMusicEvent();
         SceneManager.LoadScene(0);
     }
 }
