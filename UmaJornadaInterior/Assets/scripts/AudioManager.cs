@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-
+    
     public static AudioManager instance;
     
     public AudioSource musicSource, sfxSource;
@@ -49,15 +49,6 @@ public class AudioManager : MonoBehaviour
                 sfxSource.PlayOneShot(clipPulo);
                 break;
             case "coletavel":
-                sfxSource.PlayOneShot(clipColetavel);
-                break;
-            case "coletavel1":
-                sfxSource.PlayOneShot(clipColetavel);
-                break;
-            case "coletavel2":
-                sfxSource.PlayOneShot(clipColetavel);
-                break;
-            case "coletavel3":
                 sfxSource.PlayOneShot(clipColetavel);
                 break;
             default:

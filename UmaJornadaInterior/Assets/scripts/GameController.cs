@@ -13,7 +13,12 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public Text scoreText2;
     public Text scoreText3;
-    
+
+    public GameObject pauseObj;
+    public GameObject gameOverObj; 
+
+    private bool isPaused;
+        
     public static GameController instance;
     void Awake()
     {
@@ -23,7 +28,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PauseGame();
     }
 
     public void UpdateScore(int value)
@@ -49,5 +54,28 @@ public class GameController : MonoBehaviour
     public void UpdateLives(int value)
     {
         healthText.text = "x" + value.ToString();
+    }
+
+    public void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            isPaused = !isPaused;
+            pauseObj.SetActive(isPaused);
+        }
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void GameOver()
+    {
+        gameOverObj.SetActive(true);
     }
 }
