@@ -108,6 +108,7 @@ public class player : MonoBehaviour
                 isJumping = true;
                 rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 AudioObserver.OnPlaySfxEvent("pulo");
+                ParticleObserver.OnParticleSpawnEvent(transform.position);
             }
         }
     }
@@ -115,7 +116,8 @@ public class player : MonoBehaviour
     public void Damage (int dmg)
     {
         health -= dmg;
-        GameController.instance.UpdateLives(health);
+       // GameController.instance.UpdateLives(health);
+       UiObserver.OnAtualizarVidaEvent(health);
 
         if (transform.rotation.y == 0)
         {

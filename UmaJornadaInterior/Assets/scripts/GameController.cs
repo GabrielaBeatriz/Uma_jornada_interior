@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,10 +24,29 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+             instance = this;
+             DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        UiObserver.AtualizarVidaEvent += UpdateLives;
+    }
+
+    private void OnDisable()
+    {
+        UiObserver.AtualizarVidaEvent -= UpdateLives;
+
+    }
+
     void Update()
     {
         PauseGame();

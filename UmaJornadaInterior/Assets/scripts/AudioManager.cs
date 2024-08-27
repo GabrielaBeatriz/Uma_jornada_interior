@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource, sfxSource;
 
     public AudioClip clipPulo, clipColetavel;
+
+    public float Volume;
     
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class AudioManager : MonoBehaviour
         AudioObserver.PlayMusicEvent += TocarMusica;
         AudioObserver.StopMusicEvent += PararMusica;
         AudioObserver.PlaySfxEvent += TocarEfeitoSonoro;
+        AudioObserver.volumeEvent += AtualizarVolume;
     }
 
 
@@ -38,6 +41,8 @@ public class AudioManager : MonoBehaviour
         AudioObserver.PlayMusicEvent -= TocarMusica;
         AudioObserver.StopMusicEvent -= PararMusica;
         AudioObserver.PlaySfxEvent -= TocarEfeitoSonoro;
+        AudioObserver.volumeEvent -= AtualizarVolume;
+
     }
 
     
@@ -55,6 +60,13 @@ public class AudioManager : MonoBehaviour
                 Debug.LogError($"efeito sonoro {NomeDoClip} não encontrado");
                 break;
         }
+    }
+
+    void AtualizarVolume(float volume)
+    {
+        this.Volume = volume;
+        musicSource.volume = volume;
+        sfxSource.volume = volume;
     }
 
     void TocarMusica()
