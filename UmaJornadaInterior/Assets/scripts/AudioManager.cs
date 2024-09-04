@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip clipPulo, clipColetavel;
 
-    public float Volume;
+    [SerializeField] private float Volume = 1f;
     
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
         AudioObserver.PlayMusicEvent += TocarMusica;
         AudioObserver.StopMusicEvent += PararMusica;
         AudioObserver.PlaySfxEvent += TocarEfeitoSonoro;
-        AudioObserver.volumeEvent += AtualizarVolume;
+        AudioObserver.OnVolumeChanged += AtualizarVolume;
     }
 
 
@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
         AudioObserver.PlayMusicEvent -= TocarMusica;
         AudioObserver.StopMusicEvent -= PararMusica;
         AudioObserver.PlaySfxEvent -= TocarEfeitoSonoro;
-        AudioObserver.volumeEvent -= AtualizarVolume;
+        AudioObserver.OnVolumeChanged -= AtualizarVolume;
 
     }
 
