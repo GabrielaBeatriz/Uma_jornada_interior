@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
         AudioObserver.PlayMusicEvent += TocarMusica;
         AudioObserver.StopMusicEvent += PararMusica;
         AudioObserver.PlaySfxEvent += TocarEfeitoSonoro;
-        AudioObserver.OnVolumeChanged += AtualizarVolume;
+        AudioObserver.VolumeChanged += AtualizarVolume;
     }
 
 
@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
         AudioObserver.PlayMusicEvent -= TocarMusica;
         AudioObserver.StopMusicEvent -= PararMusica;
         AudioObserver.PlaySfxEvent -= TocarEfeitoSonoro;
-        AudioObserver.OnVolumeChanged -= AtualizarVolume;
+        AudioObserver.VolumeChanged -= AtualizarVolume;
 
     }
 

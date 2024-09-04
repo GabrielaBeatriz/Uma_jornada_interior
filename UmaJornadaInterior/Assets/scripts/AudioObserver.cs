@@ -7,7 +7,7 @@ using UnityEngine;
 public static class AudioObserver
 {
     public static event Action<string> PlaySfxEvent;
-    public static event Action<float> OnVolumeChanged;
+    public static event Action<float> VolumeChanged;
 
     
 
@@ -33,13 +33,10 @@ public static class AudioObserver
     }
 
 
-    private static void OnOnVolumeChanged(float volume)
+    public static void OnVolumeChanged(float volume)
     {
-        OnVolumeChanged?.Invoke(volume);
+        VolumeChanged?.Invoke(volume);
     }
 
-    public static void VolumeChanged(float volume)
-    {
-      
-    }
+    
 }
