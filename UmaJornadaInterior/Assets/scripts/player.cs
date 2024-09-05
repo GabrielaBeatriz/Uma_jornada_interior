@@ -121,12 +121,12 @@ public class player : MonoBehaviour
 
         if (transform.rotation.y == 0)
         {
-            transform.position += new Vector3(-1, 0, 0);
+            transform.position += new Vector3(-2, 0, 0);
         }
 
         if (transform.rotation.y == 180)
         {
-            transform.position += new Vector3(1, 0, 0);
+            transform.position += new Vector3(2, 0, 0);
 
         }
         
@@ -167,7 +167,12 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.layer == 9)
+        if (coll.gameObject.layer == 10) // Altere para a camada da bola do inimigo
+        {
+            ApplyParalysis(); // Aplica paralisia ao jogador
+            Destroy(coll.gameObject); // Destroi a bola do inimigo após a colisão (se necessário)
+        }
+        else if (coll.gameObject.layer == 9)
         {
             GameController.instance.GameOver();
 
