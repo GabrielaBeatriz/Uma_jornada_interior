@@ -137,6 +137,12 @@ public class player : MonoBehaviour
         }
     }
 
+    public void IncreaseLife(int value)
+    {
+        health += value;
+        GameController.instance.UpdateLives(health);
+    }
+
     private void Atirar()
     {
         if (tiro == true)
