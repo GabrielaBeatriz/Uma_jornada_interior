@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &989583412687239341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2891216479218667270}
+  m_Layer: 10
+  m_Name: ponto de lancamento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2891216479218667270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989583412687239341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7101085, y: 0.61765, z: 0.61765}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4950803343529483582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6203770647449117828
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +63,8 @@ Transform:
   m_LocalPosition: {x: 32.07, y: -15.79, z: 0}
   m_LocalScale: {x: 0.8697966, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2891216479218667270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &301666075119757495
@@ -171,6 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11aa37f4760f374b8c7cdf913466770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bolaParalisantePrefab: {fileID: 0}
-  pontoDeLancamento: {fileID: 0}
+  bolaParalisantePrefab: {fileID: 4797118456966720459, guid: ea82ef479e41f81498d288a17f4469c8, type: 3}
+  pontoDeLancamento: {fileID: 2891216479218667270}
   intervaloEntreLancamentos: 1

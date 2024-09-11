@@ -46,6 +46,8 @@ public class player : MonoBehaviour
         tiro = Input.GetKeyDown(KeyCode.Z);
 
         Atirar();
+        Move(); 
+        Jump();
     }
     
 
@@ -56,9 +58,6 @@ public class player : MonoBehaviour
         {
             return;
         }
-        
-        Move();
-        Jump();
     }
 
     
@@ -121,12 +120,14 @@ public class player : MonoBehaviour
 
         if (transform.rotation.y == 0)
         {
-            transform.position += new Vector3(-2, 0, 0);
+            //transform.position += new Vector3(-2, 0, 0);
+            rig.AddForce(new Vector2(-2,2),ForceMode2D.Impulse);
         }
 
         if (transform.rotation.y == 180)
         {
-            transform.position += new Vector3(2, 0, 0);
+            //transform.position += new Vector3(2, 0, 0);
+            rig.AddForce(new Vector2(2,2),ForceMode2D.Impulse);
 
         }
         

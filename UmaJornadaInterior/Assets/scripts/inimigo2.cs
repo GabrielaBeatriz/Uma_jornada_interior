@@ -5,9 +5,9 @@ using UnityEngine;
 public class inimigo2 : MonoBehaviour
 {
     
-    public GameObject bolaParalisantePrefab; // Prefab da bola paralisante
-    public Transform pontoDeLancamento; // Ponto de onde a bola será lançada
-    public float intervaloEntreLancamentos = 1f; // Intervalo entre lançamentos
+    public GameObject bolaParalisantePrefab; 
+    public Transform pontoDeLancamento; 
+    public float intervaloEntreLancamentos = 1f; 
     
     private void Start()
     {
@@ -20,10 +20,7 @@ public class inimigo2 : MonoBehaviour
         {
             GameObject bola = Instantiate(bolaParalisantePrefab, pontoDeLancamento.position, Quaternion.identity);
             Rigidbody2D rb = bola.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = new Vector2(-5f, 0f); // Defina a velocidade e direção conforme necessário
-            }
+            
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
