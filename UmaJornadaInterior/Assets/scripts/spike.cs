@@ -17,8 +17,8 @@ public class spike : MonoBehaviour
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(Random.Range(intervalo.x, intervalo.y));
-        anim.enabled = true;
+        yield return new WaitForSeconds(Random.Range(0, 2));
+        //anim.enabled = true;
     }
     
 }
