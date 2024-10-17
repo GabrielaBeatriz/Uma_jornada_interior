@@ -4571,6 +4571,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1462017652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4666809616856491942, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_Name
+      value: Armadilha (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157776510524631505, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157776510524631505, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -33.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07085659
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6912260239879795858, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e701179c31de1f04491cc23339e55d48, type: 3}
 --- !u!1 &1475699375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921838938243990682, guid: d3a512c60d73c5b45a604437c09cfdbc, type: 3}
@@ -5731,13 +5797,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armadilha
       objectReference: {fileID: 0}
+    - target: {fileID: 9157776510524631505, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157776510524631505, guid: e701179c31de1f04491cc23339e55d48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.43
+      objectReference: {fileID: 0}
     - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.75
+      value: 12.96
       objectReference: {fileID: 0}
     - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -33.47
+      value: -33.5
       objectReference: {fileID: 0}
     - target: {fileID: 9216736407203666016, guid: e701179c31de1f04491cc23339e55d48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6303,3 +6377,4 @@ SceneRoots:
   - {fileID: 260364093}
   - {fileID: 2014526856}
   - {fileID: 4632801142453098372}
+  - {fileID: 1462017652}
