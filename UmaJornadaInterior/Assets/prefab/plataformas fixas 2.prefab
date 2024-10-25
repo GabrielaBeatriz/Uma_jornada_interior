@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1782437465671870180}
   - component: {fileID: 3248130097255783180}
   - component: {fileID: 5477440971260708840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: plataformas fixas 2
-  m_TagString: Untagged
+  m_TagString: "ch\xE3o"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
