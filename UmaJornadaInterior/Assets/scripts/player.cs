@@ -150,10 +150,15 @@ public class player : MonoBehaviour
         {
             GameObject temp = Instantiate(fogoProjetil);
             temp.transform.position = arma.position;
-            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(forcaDoTiro, 0);
-            Destroy(temp.gameObject, 3f);
+
+            // Configura a velocidade do projétil
+            Rigidbody2D projectileRb = temp.GetComponent<Rigidbody2D>();
+            projectileRb.velocity = new Vector2(forcaDoTiro, 0);
+
+            Destroy(temp.gameObject, 3f); // Destrói o projétil após 3 segundos
         }
     }
+
     
     public void ApplyParalysis()
     {

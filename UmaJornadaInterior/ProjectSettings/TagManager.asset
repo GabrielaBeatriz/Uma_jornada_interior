@@ -6,6 +6,7 @@ TagManager:
   tags:
   - "ch\xE3o"
   - fogo
+  - inimigo
   layers:
   - Default
   - TransparentFX
