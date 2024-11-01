@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
+    public Text VITORIATEXTO;
     public GameObject fogoProjetil; // fogo
     public Transform arma; // posiçao de onde sai o tiro
     private bool tiro;
     public float forcaDoTiro; //velocidade do tiro
     private bool flipX = false; 
+    
     
     public int health = 3;
     public float paralysisDuration = 2f; // Duração da paralisação em segundos
@@ -27,6 +30,8 @@ public class player : MonoBehaviour
     private Rigidbody2D rig;
 
     public int nPulos;
+
+    
     
     // Start is called before the first frame update
     void Start()
@@ -179,6 +184,10 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
+        if(coll.gameObject.tag == "vitoria")
+        {
+            VITORIATEXTO.gameObject.SetActive(true);
+        }
         if (coll.gameObject.layer == 10) // Altere para a camada da bola do inimigo
         {
             ApplyParalysis(); // Aplica paralisia ao jogador
@@ -187,8 +196,8 @@ public class player : MonoBehaviour
         else if (coll.gameObject.layer == 9)
         {
             GameController.instance.GameOver();
-
         }
     }
+
 }
 
